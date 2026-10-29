@@ -1,0 +1,144 @@
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 20;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  transition: background-color 300ms ease;
+}
+
+nav.solid {
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+nav .wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: Anton, sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.brand svg {
+  width: 30px;
+  height: 30px;
+}
+
+.links {
+  display: flex;
+  gap: 36px;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.links a {
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.links a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.links a[aria-current="page"]::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--acc);
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .links a:hover {
+    color: var(--ink);
+  }
+}
+
+.menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px var(--line);
+  place-items: center;
+  align-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu span {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: currentcolor;
+  border-radius: 1px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: var(--acc);
+  color: var(--on-acc);
+  padding: 8px 14px;
+  border-radius: 999px;
+  z-index: 50;
+}
+
+.skip:focus {
+  left: 16px;
+}
+
+@media (max-width: 900px) {
+  nav {
+    right: auto;
+    width: 100vw;
+  }
+
+  .menu {
+    display: grid;
+  }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px var(--gutter) 20px;
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .links a {
+    padding: 14px 0;
+    font-size: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+}

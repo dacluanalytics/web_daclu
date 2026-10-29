@@ -1,0 +1,43 @@
+:where(body.home) .cvb {
+  position: relative;
+}
+
+:where(body.home) .cvb::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(14,15,17,.28);
+  border-radius: 3px;
+  pointer-events: none;
+  background: linear-gradient(var(--ink-dark),var(--ink-dark)) 0 0/14px 2px,linear-gradient(var(--ink-dark),var(--ink-dark)) 0 0/2px 14px,linear-gradient(var(--ink-dark),var(--ink-dark)) 100% 0/14px 2px,linear-gradient(var(--ink-dark),var(--ink-dark)) 100% 0/2px 14px, linear-gradient(var(--ink-dark),var(--ink-dark)) 0 100%/14px 2px,linear-gradient(var(--ink-dark),var(--ink-dark)) 0 100%/2px 14px,linear-gradient(var(--ink-dark),var(--ink-dark)) 100% 100%/14px 2px,linear-gradient(var(--ink-dark),var(--ink-dark)) 100% 100%/2px 14px;
+  background-repeat: no-repeat;
+}
+
+:where(body.home) .cvb::before {
+  content: attr(data-tag);
+  position: absolute;
+  z-index: 3;
+  left: -7px;
+  top: -30px;
+  font: 500 11px 'Geist Mono',monospace;
+  color: var(--ink);
+  background: var(--ink-dark);
+  padding: 4px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+:where(body.home) .mk-phone .cvb::after {
+  border-color: rgba(255,176,0,.5);
+  background-image: linear-gradient(var(--acc),var(--acc)),linear-gradient(var(--acc),var(--acc)),linear-gradient(var(--acc),var(--acc)),linear-gradient(var(--acc),var(--acc)),linear-gradient(var(--acc),var(--acc)),linear-gradient(var(--acc),var(--acc)),linear-gradient(var(--acc),var(--acc)),linear-gradient(var(--acc),var(--acc));
+}
+
+:where(body.home) .mk-phone .cvb::before {
+  background: var(--acc);
+  color: var(--on-acc);
+  top: -28px;
+}
+
+:where(body.home) .mk-xls .cvb::before {
+  top: -34px;
+}

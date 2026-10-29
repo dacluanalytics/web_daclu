@@ -1,0 +1,30 @@
+@media (prefers-reduced-motion:reduce) {
+  :where(body.home) .reveal {
+    transition: opacity 200ms ease;
+    transform: none!important;
+    filter: none!important;
+  }
+}
+
+:where(body.home) .reveal,
+:where(body.servicios) .reveal,
+:where(body.notas) .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 700ms var(--ease-out),transform 700ms var(--ease-out);
+}
+
+:where(body.home) .reveal.in,
+:where(body.servicios) .reveal.in,
+:where(body.notas) .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  :where(body.servicios) .reveal,
+:where(body.notas) .reveal {
+    transition: opacity 200ms ease;
+    transform: none;
+  }
+}

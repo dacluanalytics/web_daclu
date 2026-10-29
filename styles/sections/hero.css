@@ -1,0 +1,199 @@
+:where(body.home) #story {
+  height: 460vh;
+  position: relative;
+}
+
+:where(body.home) .pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: radial-gradient(60% 55% at 65% 55%,var(--c-15171b) 0%,var(--bg) 70%);
+}
+
+:where(body.home) #gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:where(body.home) #hud {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:where(body.home) #hud {
+  pointer-events: none;
+  z-index: 1;
+}
+
+:where(body.home) .copy {
+  position: absolute;
+  z-index: 3;
+  left: max(var(--gutter),calc((100vw - 1320px)/2 + var(--gutter)));
+  top: 0;
+  bottom: 0;
+  width: min(520px,42vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+}
+
+:where(body.home) .copy a {
+  pointer-events: auto;
+}
+
+:where(body.home) .hero-stage {
+  display: grid;
+  margin-bottom: 40px;
+}
+
+:where(body.home) .hero-stage>div {
+  grid-area: 1/1;
+  align-self: end;
+  width: 100%;
+  transition: opacity 450ms var(--ease-out),transform 450ms var(--ease-out),filter 450ms var(--ease-out);
+}
+
+:where(body.home) .hero-stage>div[aria-hidden="true"] {
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(6px);
+}
+
+:where(body.home) .hero-stage h1 {
+  font-size: clamp(56px,7.4vw,124px);
+}
+
+:where(body.home) .hero-stage h2 {
+  font-size: clamp(56px,7.4vw,124px);
+}
+
+:where(body.home) .hero-stage em {
+  font-style: normal;
+  color: var(--acc);
+}
+
+:where(body.home) .hero-stage>div[data-s="2"] h2 {
+  font-size: clamp(46px,5.6vw,96px);
+}
+
+:where(body.home) .hero-stage p {
+  color: var(--ink-2);
+  font-size: 17px;
+  max-width: 34ch;
+  margin-top: 18px;
+}
+
+:where(body.home) .ticks {
+  display: flex;
+  gap: 6px;
+  margin-top: 30px;
+}
+
+:where(body.home) .ticks i {
+  height: 3px;
+  width: 22px;
+  background: rgba(255,255,255,.22);
+  border-radius: 2px;
+  transition: width 300ms var(--ease-out),background-color 300ms ease;
+}
+
+:where(body.home) .ticks i.on {
+  background: var(--white);
+  width: 44px;
+}
+
+@media (max-width:900px) {
+  :where(body.home) .copy {
+    left: var(--gutter);
+    right: var(--gutter);
+    width: auto;
+    top: auto;
+    bottom: 36px;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.home) .hero-stage h1 {
+    font-size: clamp(48px,14vw,72px);
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.home) .hero-stage h2 {
+    font-size: clamp(48px,14vw,72px);
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.home) .hero-stage p {
+    font-size: 16px;
+  }
+}
+
+:where(body.home) .pin.glitch #gl {
+  animation: hero-glx 380ms steps(1,end) both;
+}
+
+:where(body.home) .pin.glitch #hud {
+  animation: glh 380ms steps(1,end) both;
+}
+
+:where(body.home) .scan {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 1px,transparent 1px 3px);
+}
+
+:where(body.home) .pin.glitch .scan {
+  animation: scan 380ms steps(1,end) both;
+}
+
+@keyframes hero-glx {
+  0%{transform:translate(-14px,0) skewX(-6deg);filter:drop-shadow(5px 0 rgba(255,40,90,.85)) drop-shadow(-5px 0 rgba(0,220,255,.85))} 25%{transform:translate(12px,0);filter:drop-shadow(-4px 0 rgba(255,40,90,.85)) drop-shadow(4px 0 rgba(0,220,255,.85))} 50%{transform:translate(-6px,2px) skewX(4deg);filter:drop-shadow(3px 0 rgba(255,40,90,.7)) drop-shadow(-3px 0 rgba(0,220,255,.7))} 75%{transform:translate(3px,0);filter:none}100%{transform:none;filter:none}
+}
+
+@keyframes glh {
+  0%{clip-path:inset(12% 0 58% 0);transform:translateX(18px)}25%{clip-path:inset(46% 0 30% 0);transform:translateX(-14px)} 50%{clip-path:inset(70% 0 6% 0);transform:translateX(8px)}75%{clip-path:inset(0);transform:none}100%{clip-path:none;transform:none}
+}
+
+@keyframes scan {
+  0%{opacity:1}50%{opacity:.6}100%{opacity:0}
+}
+
+@media (prefers-reduced-motion:reduce) {
+  :where(body.home) .pin.glitch #gl {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  :where(body.home) .pin.glitch #hud {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  :where(body.home) .pin.glitch .scan {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  :where(body.home) .hero-stage>div {
+    transition: opacity 200ms ease;
+    transform: none!important;
+    filter: none!important;
+  }
+}

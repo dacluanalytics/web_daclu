@@ -1,0 +1,291 @@
+:where(body.home) .found {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+
+:where(body.home) .found p {
+  color: var(--ink-2);
+  font-size: 18px;
+  max-width: 40ch;
+  margin-bottom: 28px;
+}
+
+@media (max-width:900px) {
+  :where(body.home) .found {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.home) .founder {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.home) .safe {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+:where(body.home) .safe {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+  margin-top: 40px;
+}
+
+:where(body.home) .safe article {
+  background: var(--bg-2);
+  border-radius: var(--r);
+  padding: 26px;
+}
+
+:where(body.home) .safe svg {
+  width: 28px;
+  height: 28px;
+  color: var(--acc);
+}
+
+:where(body.home) .safe h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  margin: 16px 0 8px;
+}
+
+:where(body.home) .safe p {
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+:where(body.home) .faq {
+  margin-top: 36px;
+  border-bottom: 1px solid var(--line);
+}
+
+:where(body.home) .faq details {
+  border-top: 1px solid var(--line);
+}
+
+:where(body.home) .faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 0;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -.015em;
+}
+
+:where(body.home) .faq summary::-webkit-details-marker {
+  display: none;
+}
+
+:where(body.home) .faq summary::after {
+  content: "+";
+  font-family: Anton,sans-serif;
+  font-size: 28px;
+  color: var(--acc);
+  line-height: 1;
+  flex: none;
+}
+
+:where(body.home) .faq details[open] summary::after {
+  content: "–";
+}
+
+:where(body.home) .faq details p {
+  color: var(--ink-2);
+  font-size: 16px;
+  max-width: 62ch;
+  padding-bottom: 22px;
+}
+
+:where(body.home) .faq a {
+  color: var(--acc);
+}
+
+:where(body.home) .founder {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: 48px;
+  align-items: start;
+}
+
+:where(body.home) .founder .lead {
+  margin-top: 22px;
+}
+
+:where(body.home) .who {
+  background: var(--bg-2);
+  border-radius: var(--r);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: 360px;
+}
+
+:where(body.home) .who .av {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--acc);
+  color: var(--on-acc);
+  display: grid;
+  place-items: center;
+  font-family: Anton,sans-serif;
+  font-size: 28px;
+  letter-spacing: .02em;
+  margin-bottom: 10px;
+}
+
+:where(body.home) .who b {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+:where(body.home) .who .role {
+  color: var(--ink-2);
+  font-size: 14px;
+}
+
+:where(body.home) .who a {
+  margin-top: 10px;
+  color: var(--acc);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+:where(body.home) .who .mark {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 10px;
+}
+
+:where(body.home) .who ul {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:where(body.home) .who li {
+  font-size: 15px;
+}
+
+:where(body.home) .who li span {
+  color: var(--acc);
+  margin-right: 8px;
+}
+
+@media (max-width:900px) {
+  :where(body.home) .safe {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.home) .founder {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.home) .who {
+    max-width: none;
+  }
+}
+
+:where(body.servicios) .cta {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+
+:where(body.servicios) .cta p {
+  color: var(--ink-2);
+  font-size: 18px;
+  max-width: 40ch;
+  margin-bottom: 28px;
+}
+
+:where(body.servicios) .cta .h em {
+  font-style: normal;
+  color: var(--acc);
+}
+
+@media (max-width:900px) {
+  :where(body.servicios) .cta {
+    grid-template-columns: 1fr;
+  }
+}
+
+:where(body.notas) .ask {
+  margin: 120px var(--panel-inset) 0;
+  background: var(--paper);
+  color: var(--ink-dark);
+  border-radius: 36px;
+  padding: 96px 0;
+}
+
+:where(body.notas) .ask .wrap {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: end;
+  max-width: none;
+  padding-left: max(calc(var(--gutter) - var(--panel-inset)),calc((100vw - 1320px) / 2 + var(--gutter) - var(--panel-inset)));
+  padding-right: max(calc(var(--gutter) - var(--panel-inset)),calc((100vw - 1320px) / 2 + var(--gutter) - var(--panel-inset)));
+}
+
+:where(body.notas) .ask h2 {
+  font-size: clamp(44px,6vw,92px);
+}
+
+:where(body.notas) .ask h2 em {
+  font-style: normal;
+  background: var(--acc);
+  display: inline-block;
+  padding: .04em .12em 0;
+  line-height: .92;
+  margin-top: .1em;
+}
+
+:where(body.notas) .ask p {
+  color: var(--c-4a4d52);
+  font-size: 18px;
+  margin-bottom: 24px;
+  max-width: 40ch;
+}
+
+:where(body.notas) .ask .pill i {
+  color: var(--ink-dark);
+}
+
+@media (max-width:900px) {
+  :where(body.notas) .ask {
+    margin: 96px var(--panel-inset) 0;
+    border-radius: 24px;
+    padding: 72px 0;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.notas) .ask .wrap {
+    grid-template-columns: 1fr;
+  }
+}

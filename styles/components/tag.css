@@ -1,0 +1,24 @@
+:where(body.home) .eyebrow {
+  font-family: 'Geist Mono',monospace;
+  font-size: 13px;
+  color: var(--ink-2);
+  display: block;
+  margin-bottom: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+:where(body.notas) .tagp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 12px 'Geist Mono',monospace;
+  color: var(--on-acc);
+  background: var(--acc);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+:where(body.notas) .paper .tagp {
+  color: var(--on-acc);
+}

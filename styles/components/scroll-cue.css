@@ -1,0 +1,75 @@
+.scroll-cue {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--acc);
+  text-decoration: none;
+  transform: translateX(-50%);
+  transition: opacity 400ms var(--ease-out);
+}
+
+.scroll-cue.is-gone {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-cue svg {
+  display: block;
+  width: 34px;
+  height: 22px;
+  margin-top: -9px;
+  animation: scroll-cue-fall 1.8s var(--ease-out) infinite;
+}
+
+.scroll-cue svg:first-child {
+  margin-top: 0;
+}
+
+.scroll-cue svg:nth-child(2) {
+  animation-delay: 180ms;
+}
+
+.scroll-cue svg:nth-child(3) {
+  animation-delay: 360ms;
+}
+
+@keyframes scroll-cue-fall {
+  0% {
+    opacity: 0.12;
+    transform: translateY(0);
+  }
+
+  45% {
+    opacity: 0.75;
+    transform: translateY(6px);
+  }
+
+  100% {
+    opacity: 0.12;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .scroll-cue {
+    bottom: 14px;
+  }
+
+  .scroll-cue svg {
+    width: 26px;
+    height: 17px;
+    margin-top: -7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue svg {
+    animation: none;
+    opacity: 0.45;
+    transform: none;
+  }
+}

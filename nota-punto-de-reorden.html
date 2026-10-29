@@ -19,62 +19,21 @@
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#070809;--bg-2:#121417;--ink:#EDEDEA;--ink-2:#8E9196;--line:rgba(237,237,234,.12);--acc:#FFB000;--ease-out:cubic-bezier(0.23,1,0.32,1);--r:16px;--gutter:40px;--panel-inset:16px}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:Geist,system-ui,sans-serif;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
-.display{font-family:Anton,'Arial Narrow',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.92}
-nav{position:fixed;inset:0 0 auto 0;z-index:20;height:76px;display:flex;align-items:center;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-nav .wrap{width:100%;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Anton,sans-serif;font-size:24px;letter-spacing:.02em;text-transform:uppercase}
-.brand svg{width:30px;height:30px}
-.links{display:flex;gap:36px;font-size:15px;color:var(--ink-2)}
-.links a{text-decoration:none}
-.links a[aria-current="page"]{color:var(--ink)}
-.links a[aria-current="page"]::after{content:"";display:block;height:2px;background:var(--acc);border-radius:2px;margin-top:4px}
-:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
-.sheet{padding:120px 0 80px}
-.prose{max-width:68ch}
-.prose h1{font-size:clamp(40px,6vw,76px)}
-.by{color:var(--ink-2);font-size:14px;margin:18px 0 32px}
-.by time{color:inherit}
-.prose h2{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:40px 0 12px;padding-left:14px;border-left:4px solid var(--acc);line-height:1.2}
-.prose p{margin:0 0 16px;font-size:17px}
-.prose ul{margin:0 0 16px 1.2em}
-.prose li{margin:6px 0}
-pre{background:var(--bg-2);border-radius:12px;padding:16px 18px;overflow-x:auto;margin:0 0 20px;font:500 13.5px 'Geist Mono',ui-monospace,monospace;line-height:1.7}
-.table-wrap{overflow-x:auto;margin:0 0 20px}
-table{border-collapse:collapse;width:100%;font:500 13px 'Geist Mono',ui-monospace,monospace}
-th,td{border-bottom:1px solid var(--line);text-align:left;padding:8px 10px;white-space:nowrap}
-th{color:var(--ink-2);font-weight:500}
-.pedir{color:var(--acc)}
-.pill{display:inline-flex;align-items:center;gap:6px;text-decoration:none;margin-top:8px}
-.pill span{height:54px;padding:0 30px;border-radius:999px;background:var(--acc);color:#14110A;display:flex;align-items:center;font-weight:500;font-size:16px;white-space:nowrap}
-.pill i{width:54px;height:54px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--acc);display:grid;place-items:center}
-.pill i svg{width:18px;height:18px}
-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--ink-2);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-footer .legal{margin-top:14px;font-size:12.5px}
-footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
-.fcon a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink)}
-.fcon a svg{width:14px;height:14px}
-@media (max-width:900px){:root{--gutter:16px}.links{display:none}.sheet{padding:104px 0 64px}.prose h1{font-size:clamp(36px,10vw,48px)}}
-</style>
+<link rel="stylesheet" href="/styles/index.css">
 </head>
-<body>
-<nav><div class="wrap">
+<body class="article">
+<nav id="nav" class="solid"><div class="wrap">
   <a class="brand" href="/" aria-label="Daclu inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="6" cy="27" r="2"/><circle cx="13" cy="5" r="2"/><circle cx="20" cy="7" r="2"/><circle cx="25" cy="12" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="20" cy="25" r="2"/><circle cx="13" cy="27" r="2"/></g><circle cx="15.5" cy="16" r="3.6" fill="#FFB000"/></svg>Daclu</a>
-  <div class="links"><a href="/">Inicio</a><a href="/#sectores">Sectores</a><a href="/servicios.html">Servicios</a><a href="/notas.html" aria-current="page">Notas</a></div>
+  <button type="button" class="menu" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  <div class="links" id="nav-links"><a href="/">Inicio</a><a href="/#sectores">Sectores</a><a href="/servicios.html">Servicios</a><a href="/notas.html" aria-current="page">Notas</a></div>
 </div></nav>
 <main>
-<article class="sheet"><div class="wrap"><div class="prose">
+<article class="article-pad"><div class="wrap"><div class="prose">
   <h1 class="display">Punto de reorden: cuándo pedir mercancía sin quedarse sin stock</h1>
-  <p class="by">Por Esteban Sequeda · <time datetime="2026-10-28">28 de octubre de 2026</time> · 6 min de lectura</p>
+  <p class="by">Por Daclu · <time datetime="2026-10-28">28 de octubre de 2026</time> · 6 min de lectura</p>
 
   <h2>El problema</h2>
-  <p>En casi toda empresa que compra para volver a vender pasa una de dos cosas. Se queda sin la referencia que más sale, justo cuando el cliente la pide. O llena la bodega de lo que casi no rota, porque alguien pidió “por si acaso” y ese por si acaso lleva meses ocupando plata.</p>
+  <p>En casi toda empresa que compra para volver a vender pasa una de dos cosas. Se queda sin la referencia que más sale, justo cuando el cliente la pide. O llena la bodega de lo que casi no rota, porque alguien pidió “por si acaso” y ese por si acaso lleva meses ocupando dinero.</p>
   <p>Las dos salen caras. El quiebre se ve en la venta que no se hizo y en el cliente que se fue a otro lado. El exceso se ve menos, pero está en la caja: mercancía pagada que no se mueve, espacio que no se puede usar y, en algunos casos, producto que se vence o se pasa de moda.</p>
   <p>El pedido casi nunca se decide con una regla. Se decide cuando alguien se acuerda, cuando el proveedor llama, o cuando el estante se ve vacío. Eso funciona mientras el catálogo es corto y la misma persona lleva años mirándolo. En cuanto hay más referencias, más sedes o más de una persona comprando, la memoria deja de alcanzar.</p>
   <p>El punto de reorden es esa regla, escrita. No predice el futuro. Dice, con los números que usted ya tiene, en qué momento hay que hacer el pedido para no llegar a cero mientras el proveedor despacha.</p>
@@ -82,13 +41,13 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
   <h2>La fórmula</h2>
   <p>Punto de reorden = venta promedio diaria × (días que tarda el proveedor + días de colchón).</p>
   <p>La venta promedio diaria es lo que sale de esa referencia en un día normal. Los días del proveedor son los que de verdad pasan entre el pedido y la llegada a su bodega, no los que dice el catálogo. El colchón son días extra de inventario para cubrir un retraso del proveedor o un pico de venta. No es adorno: sin colchón, cualquier día malo lo deja en cero.</p>
-  <p>Cuando el stock baja hasta ese número, se pide. No antes, porque estaría adelantando plata. No después, porque el tiempo del proveedor ya no le alcanza.</p>
+  <p>Cuando el stock baja hasta ese número, se pide. No antes, porque estaría adelantando dinero. No después, porque el tiempo del proveedor ya no le alcanza.</p>
   <p>El colchón no es el mismo para todo. Lo que más vende, o lo que tarda más en llegar, merece más días. Lo que se mueve poco puede vivir con menos. Tratar a todo el catálogo igual es la forma más rápida de volver al problema del primer párrafo.</p>
 
   <h2>Un ejemplo</h2>
   <p>Tome una referencia que vende 20 unidades al día. El proveedor tarda 10 días en entregarla y usted quiere 4 días de colchón, por si el despacho se atrasa o la semana se pone buena.</p>
   <p>20 × (10 + 4) = 280.</p>
-  <p>El punto de reorden es 280 unidades. Cuando el stock baje a 280, se hace el pedido. Si espera a tener 100, los 10 días del proveedor lo alcanzan en cero. Si pide cuando todavía tiene 600, está sentando plata que podía seguir en la caja.</p>
+  <p>El punto de reorden es 280 unidades. Cuando el stock baje a 280, se hace el pedido. Si espera a tener 100, los 10 días del proveedor lo alcanzan en cero. Si pide cuando todavía tiene 600, está sentando dinero que podía seguir en la caja.</p>
   <p>El 280 no es la cantidad a pedir. Es la alarma. Cuánto pedir es otra cuenta: lo que espera vender hasta la siguiente compra, menos lo que ya tiene en camino. Esta nota se queda en la alarma, que es la que evita el quiebre.</p>
 
   <h2>Cómo armarlo en Excel</h2>
@@ -135,5 +94,6 @@ Punto de reorden   =F2*(C2+D2)
 </div>
 <div class="wrap legal"><span>DACLU S.A.S. · NIT 902.117.086-9 · Colombia</span><a href="/politica-de-datos.html">Política de tratamiento de datos</a></div>
 </footer>
+<script src="/scripts/nav.js"></script>
 </body>
 </html>

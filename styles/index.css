@@ -1,0 +1,23 @@
+@layer reset, tokens, base, layout, components, sections, pages, utilities;
+
+@import url("tokens.css") layer(tokens);
+@import url("fonts.css") layer(base);
+@import url("base.css") layer(base);
+@import url("layout.css") layer(layout);
+@import url("components/header.css") layer(components);
+@import url("components/footer.css") layer(components);
+@import url("components/pill.css") layer(components);
+@import url("components/tag.css") layer(components);
+@import url("components/chips.css") layer(components);
+@import url("components/detect.css") layer(components);
+@import url("components/sheet.css") layer(components);
+@import url("components/reveal.css") layer(components);
+@import url("components/scroll-cue.css") layer(components);
+@import url("sections/hero.css") layer(sections);
+@import url("sections/sectores.css") layer(sections);
+@import url("sections/como.css") layer(sections);
+@import url("sections/servicios.css") layer(sections);
+@import url("sections/notes-cover.css") layer(sections);
+@import url("sections/notes-list.css") layer(sections);
+@import url("sections/article.css") layer(sections);
+@import url("sections/home-rest.css") layer(sections);

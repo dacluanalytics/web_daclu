@@ -1,0 +1,143 @@
+:where(body.article) .by {
+  color: var(--ink-2);
+  font-size: 14px;
+  margin: 18px 0 32px;
+}
+
+:where(body.article) .by time {
+  color: inherit;
+}
+
+:where(body.article) .prose h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  margin: 40px 0 12px;
+  padding-left: 14px;
+  border-left: 4px solid var(--acc);
+  line-height: 1.2;
+}
+
+:where(body.article) .prose p {
+  margin: 0 0 16px;
+  font-size: 17px;
+}
+
+:where(body.article) pre {
+  background: var(--bg-2);
+  border-radius: 12px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  margin: 0 0 20px;
+  font: 500 13.5px 'Geist Mono',ui-monospace,monospace;
+  line-height: 1.7;
+}
+
+:where(body.article) .table-wrap {
+  overflow-x: auto;
+  margin: 0 0 20px;
+}
+
+:where(body.article) table {
+  border-collapse: collapse;
+  width: 100%;
+  font: 500 13px 'Geist Mono',ui-monospace,monospace;
+}
+
+:where(body.article) th {
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+:where(body.article) td {
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+:where(body.article) th {
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+:where(body.article) .pedir {
+  color: var(--acc);
+}
+
+:where(body.article) .article-pad,
+:where(body.policy) .article-pad {
+  padding: 120px 0 80px;
+}
+
+:where(body.article) .prose,
+:where(body.policy) .prose {
+  max-width: 68ch;
+}
+
+:where(body.article) .prose h1,
+:where(body.policy) .prose h1 {
+  font-size: clamp(40px,6vw,76px);
+}
+
+:where(body.policy) .prose .by {
+  color: var(--ink-2);
+  font-size: 14px;
+  margin: 18px 0 32px;
+}
+
+:where(body.policy) .prose h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  margin: 36px 0 12px;
+  padding-left: 14px;
+  border-left: 4px solid var(--acc);
+  line-height: 1.2;
+}
+
+:where(body.policy) .prose p {
+  font-size: 17px;
+}
+
+:where(body.policy) .prose li {
+  font-size: 17px;
+}
+
+:where(body.policy) .prose p {
+  margin: 0 0 14px;
+}
+
+:where(body.article) .prose ul,
+:where(body.policy) .prose ul {
+  margin: 0 0 16px 1.2em;
+}
+
+:where(body.article) .prose li,
+:where(body.policy) .prose li {
+  margin: 6px 0;
+}
+
+:where(body.policy) .prose a {
+  color: var(--acc);
+}
+
+:where(body.policy) .addr {
+  color: var(--acc);
+}
+
+@media (max-width:900px) {
+  :where(body.article) .article-pad,
+:where(body.policy) .article-pad {
+    padding: 104px 0 64px;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.article) .prose h1,
+:where(body.policy) .prose h1 {
+    font-size: clamp(36px,10vw,48px);
+  }
+}

@@ -1,0 +1,45 @@
+@media (hover:hover) and (pointer:fine) {
+  :where(body.home) .fcon a:hover,
+:where(body.servicios) .fcon a:hover,
+:where(body.notas) .fcon a:hover {
+    color: var(--acc);
+  }
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+footer .legal {
+  margin-top: 14px;
+  font-size: 12.5px;
+}
+
+footer .legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.fcon a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.fcon a svg {
+  width: 14px;
+  height: 14px;
+}

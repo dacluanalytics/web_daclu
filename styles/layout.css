@@ -1,0 +1,38 @@
+:where(body.home) section.s {
+  padding: 140px 0;
+}
+
+:where(body.home) section.s+section.s {
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width:900px) {
+  :where(body.home) section.s {
+    padding: 96px 0;
+  }
+}
+
+:where(body.servicios) section.s {
+  padding: 120px 0;
+}
+
+@media (max-width:900px) {
+  :where(body.servicios) section.s {
+    padding: 88px 0;
+  }
+}
+
+:where(body.notas) main {
+  padding-bottom: 120px;
+}
+
+:where(body.notas) main {
+  padding-bottom: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}

@@ -1,0 +1,88 @@
+:where(body.home) .display {
+  font-family: Anton,'Arial Narrow','Roboto Condensed',Impact,sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: .9;
+}
+
+:where(body.home) .h {
+  font-size: clamp(48px,7vw,104px);
+}
+
+:where(body.home) .h em {
+  font-style: normal;
+  color: var(--acc-ink);
+}
+
+:where(body.home) .lead {
+  color: var(--ink-2);
+  font-size: 18px;
+  max-width: 50ch;
+  margin-top: 22px;
+}
+
+:where(body.servicios) .display {
+  font-family: Anton,'Arial Narrow',Impact,sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: .9;
+}
+
+:where(body.servicios) .h {
+  font-size: clamp(48px,6.4vw,96px);
+}
+
+:where(body.servicios) .lead {
+  color: var(--ink-2);
+  font-size: 18px;
+  max-width: 52ch;
+  margin-top: 18px;
+}
+
+body.home,
+body.servicios,
+body.notas {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Geist,system-ui,sans-serif;
+  line-height: 1.5;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.article,
+body.policy {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Geist,system-ui,sans-serif;
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+:where(body.notas) .display,
+:where(body.article) .display,
+:where(body.policy) .display {
+  font-family: Anton,'Arial Narrow',Impact,sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: .92;
+}
+
+:where(body.servicios) :focus-visible,
+:where(body.notas) :focus-visible,
+:where(body.article) :focus-visible,
+:where(body.policy) :focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 3px;
+}

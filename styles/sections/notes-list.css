@@ -1,0 +1,720 @@
+:where(body.notas) .notas-h {
+  padding-top: 110px;
+}
+
+:where(body.notas) .notas-h h2 {
+  font-size: clamp(64px,9vw,140px);
+}
+
+:where(body.notas) .notas-h h2 em {
+  font-style: normal;
+  color: var(--acc);
+}
+
+:where(body.notas) .notas-h p {
+  color: var(--ink-2);
+  font-size: 18px;
+  max-width: 46ch;
+  margin-top: 14px;
+}
+
+:where(body.notas) .note-card canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+:where(body.notas) .meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font: 500 12.5px 'Geist Mono',monospace;
+  color: var(--ink-2);
+}
+
+:where(body.notas) .tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  justify-content: space-between;
+  margin-top: 56px;
+}
+
+:where(body.notas) .tools h2 {
+  font-size: clamp(40px,5vw,72px);
+}
+
+:where(body.notas) .ctrl {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+:where(body.notas) .srch {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+:where(body.notas) .srch label {
+  font: 500 12px 'Geist Mono',monospace;
+  color: var(--ink-2);
+}
+
+:where(body.notas) .srch input {
+  width: 300px;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--bg-2);
+  color: var(--ink);
+  padding: 0 18px;
+  font: 15px Geist,sans-serif;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+:where(body.notas) .srch input::placeholder {
+  color: var(--c-7d8086);
+}
+
+:where(body.notas) .srch input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--acc);
+}
+
+:where(body.notas) .notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+:where(body.notas) .note-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-2);
+  text-decoration: none;
+  transition: box-shadow 250ms ease,transform 250ms var(--ease-out);
+}
+
+:where(body.notas) .note-card.big {
+  grid-column: span 2;
+}
+
+:where(body.notas) .note-card .cv {
+  position: relative;
+  aspect-ratio: 16/10;
+}
+
+:where(body.notas) .note-card .tx {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+:where(body.notas) .note-card h3 {
+  font-weight: 500;
+  font-size: 21px;
+  letter-spacing: -.015em;
+  line-height: 1.2;
+}
+
+:where(body.notas) .note-card p {
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+:where(body.notas) .note-card .meta {
+  margin-top: auto;
+}
+
+:where(body.notas) .note-card.soon {
+  cursor: default;
+}
+
+:where(body.notas) .note-card.soon .cv {
+  opacity: .6;
+}
+
+:where(body.notas) .soonb {
+  font: 500 11px 'Geist Mono',monospace;
+  color: var(--ink-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  :where(body.notas) a.note-card:hover {
+    box-shadow: inset 0 0 0 1px rgba(255,176,0,.5);
+    transform: translateY(-3px);
+  }
+}
+
+:where(body.notas) .note-card.enter {
+  animation: notes-enter 420ms var(--ease-out) both;
+}
+
+@keyframes notes-enter {
+  from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}
+}
+
+:where(body.notas) .empty {
+  display: none;
+  margin-top: 28px;
+  padding: 48px;
+  border-radius: 20px;
+  background: var(--bg-2);
+  text-align: center;
+  color: var(--ink-2);
+}
+
+:where(body.notas) .empty b {
+  display: block;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+@media (max-width:1000px) {
+  :where(body.notas) .notes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width:1000px) {
+  :where(body.notas) .note-card.big {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.notas) .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.notas) .note-card.big {
+    grid-column: auto;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.notas) .ctrl {
+    align-items: stretch;
+    width: 100%;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.notas) .srch input {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  :where(body.notas) .note-card.enter {
+    animation: none;
+  }
+}
+
+:where(body.notas) .paper {
+  --ink: var(--ink-dark);
+  --ink-2: var(--c-55585d);
+  --line: rgba(14,15,17,.12);
+  --bg-2: var(--white);
+  --bg-3: var(--paper-2);
+  background: var(--paper);
+  color: var(--ink-dark);
+  position: relative;
+  z-index: 3;
+}
+
+:where(body.notas) .paper {
+  border-radius: 36px 36px 0 0;
+  padding-bottom: 110px;
+}
+
+:where(body.notas) .paper .notas-h {
+  padding-top: 96px;
+}
+
+:where(body.notas) .paper .notas-h h2 em {
+  color: var(--acc);
+}
+
+:where(body.notas) .paper .srch input {
+  background: var(--white);
+  color: var(--ink-dark);
+  box-shadow: inset 0 0 0 1px rgba(14,15,17,.14);
+}
+
+:where(body.notas) .paper .srch input::placeholder {
+  color: var(--c-8a8d92);
+}
+
+:where(body.notas) .paper .note-card {
+  background: var(--white);
+  box-shadow: 0 1px 0 rgba(14,15,17,.04),0 18px 40px rgba(14,15,17,.06);
+}
+
+:where(body.notas) .paper .note-card .cv {
+  margin: 10px 10px 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+:where(body.notas) .paper .note-card.soon .cv {
+  opacity: .85;
+}
+
+:where(body.notas) .paper .soonb {
+  color: var(--c-55585d);
+}
+
+:where(body.notas) .paper .empty {
+  background: var(--white);
+}
+
+@media (hover:hover) and (pointer:fine) {
+  :where(body.notas) .paper a.note-card:hover {
+    box-shadow: inset 0 0 0 1.5px var(--ink-dark),0 18px 40px rgba(14,15,17,.1);
+  }
+}
+
+:where(body.notas) .paper .ask {
+  background: var(--ink-dark);
+  color: var(--c-ededea);
+  margin: 110px var(--panel-inset) 0;
+}
+
+:where(body.notas) .paper .ask h2 em {
+  color: var(--ink-dark);
+}
+
+:where(body.notas) .paper .ask p {
+  color: var(--c-9a9da2);
+}
+
+:where(body.notas) .paper .ask .pill i {
+  color: var(--c-ededea);
+}
+
+@media (max-width:900px) {
+  :where(body.notas) .paper {
+    border-radius: 24px 24px 0 0;
+  }
+}
+
+@media (max-width:900px) {
+  :where(body.notas) .paper .ask {
+    margin: 88px var(--panel-inset) 0;
+  }
+}
+
+html.few-notes body.notas #chips {
+  display: none!important;
+}
+
+html.few-notes body.notas .feat-row {
+  grid-auto-columns: min(380px,100%);
+}
+
+:where(body.notas) #chips {
+  margin: 8px 0 28px;
+}
+
+:where(body.notas) #lista .tools {
+  display: none!important;
+}
+
+:where(body.notas) #lista .notes-grid {
+  display: none!important;
+}
+
+:where(body.notas) #lista .empty {
+  display: none!important;
+}
+
+:where(body.notas) .sh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 64px 0 22px;
+}
+
+:where(body.notas) .sh h3 {
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -.02em;
+  padding-left: 14px;
+  border-left: 4px solid var(--acc);
+  line-height: 1.1;
+}
+
+:where(body.notas) .fnav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+:where(body.notas) .fnav button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 0;
+  background: none;
+  color: var(--ink-dark);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: opacity 200ms ease;
+}
+
+:where(body.notas) .fnav button:disabled {
+  opacity: .25;
+  cursor: default;
+}
+
+:where(body.notas) .fnav svg {
+  width: 18px;
+  height: 18px;
+}
+
+:where(body.notas) .fdots {
+  display: flex;
+  gap: 6px;
+}
+
+:where(body.notas) .fdots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-d3d3cc);
+  transition: background-color 200ms ease,width 250ms var(--ease-out);
+}
+
+:where(body.notas) .fdots i.on {
+  background: var(--ink-dark);
+  width: 20px;
+  border-radius: 4px;
+}
+
+:where(body.notas) .feat-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 4*16px)/5);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+:where(body.notas) .feat-row::-webkit-scrollbar {
+  display: none;
+}
+
+:where(body.notas) .fs {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--c-0d0e10);
+  display: block;
+}
+
+:where(body.notas) .fs canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 600ms var(--ease-out);
+}
+
+:where(body.notas) .fs::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg,rgba(7,8,9,.92) 8%,rgba(7,8,9,.1) 60%);
+}
+
+:where(body.notas) .fs .tg {
+  position: absolute;
+  z-index: 2;
+  left: 14px;
+  top: 14px;
+  font: 500 11.5px Geist,sans-serif;
+  color: var(--white);
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 5px 10px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.2);
+}
+
+:where(body.notas) .fs b {
+  position: absolute;
+  z-index: 2;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -.01em;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  :where(body.notas) .fs:hover canvas {
+    transform: scale(1.05);
+  }
+}
+
+:where(body.notas) .lt>* {
+  min-width: 0;
+}
+
+:where(body.notas) .li>* {
+  min-width: 0;
+}
+
+:where(body.notas) .lt {
+  display: grid;
+  grid-template-columns: minmax(0,1.7fr) minmax(0,1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+:where(body.notas) .li {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 22px;
+  padding: 0 0 26px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid rgba(14,15,17,.1);
+  text-decoration: none;
+  color: inherit;
+}
+
+:where(body.notas) .li:last-child {
+  border-bottom: 0;
+}
+
+:where(body.notas) .li .th {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--c-0d0e10);
+}
+
+:where(body.notas) .li canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:where(body.notas) .li h4 {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.25;
+  letter-spacing: -.015em;
+}
+
+:where(body.notas) .li p {
+  color: var(--c-55585d);
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+:where(body.notas) .li .mt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--c-7a7d82);
+}
+
+:where(body.notas) .li .mt span.c {
+  background: var(--c-ffe7a8);
+  color: var(--c-5a3d00);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+:where(body.notas) .li .mt i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-b9bbbf);
+}
+
+@media (hover:hover) and (pointer:fine) {
+  :where(body.notas) a.li:hover h4 {
+    text-decoration: underline;
+    text-decoration-color: var(--acc);
+    text-underline-offset: 4px;
+  }
+}
+
+:where(body.notas) .soon-block {
+  margin-top: 28px;
+}
+
+:where(body.notas) .soon-block h3 {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--c-7a7d82);
+  padding-left: 14px;
+  border-left: 4px solid var(--c-d9d9d2);
+  line-height: 1.1;
+}
+
+:where(body.notas) .soon-block ul {
+  list-style: none;
+  margin-top: 8px;
+}
+
+:where(body.notas) .soon-block li {
+  color: var(--c-9a9da2);
+  font-size: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(14,15,17,.06);
+}
+
+:where(body.notas) .lt {
+  display: block;
+}
+
+:where(body.notas) .tr h3 {
+  font-weight: 600;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+:where(body.notas) .tr h3 em {
+  font-style: normal;
+  color: var(--c-c98a00);
+}
+
+:where(body.notas) .tr ol {
+  list-style: none;
+  margin-top: 12px;
+}
+
+:where(body.notas) .tr li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 8px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(14,15,17,.08);
+}
+
+:where(body.notas) .tr li:last-child {
+  border-bottom: 0;
+}
+
+:where(body.notas) .tr .n {
+  font: 400 30px/1 Anton,sans-serif;
+  color: var(--c-c9c9c2);
+}
+
+:where(body.notas) .tr li:first-child .n {
+  color: var(--acc);
+}
+
+:where(body.notas) .tr a {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+  text-decoration: none;
+  color: var(--ink-dark);
+}
+
+:where(body.notas) .tr span.t {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+  text-decoration: none;
+  color: var(--ink-dark);
+}
+
+:where(body.notas) .tr small {
+  display: block;
+  color: var(--c-7a7d82);
+  font-size: 12.5px;
+  margin-top: 6px;
+}
+
+@media (max-width:1000px) {
+  :where(body.notas) .feat-row {
+    grid-auto-columns: calc((100% - 2*16px)/2.6);
+  }
+}
+
+@media (max-width:1000px) {
+  :where(body.notas) .lt {
+    grid-template-columns: minmax(0,1fr);
+  }
+}
+
+@media (max-width:1000px) {
+  :where(body.notas) .tr {
+    position: static;
+  }
+}
+
+@media (max-width:600px) {
+  :where(body.notas) .feat-row {
+    grid-auto-columns: 72%;
+  }
+}
+
+@media (max-width:600px) {
+  :where(body.notas) .li {
+    grid-template-columns: 110px 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width:600px) {
+  :where(body.notas) .li h4 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width:600px) {
+  :where(body.notas) .li p {
+    display: none;
+  }
+}
+
+.note-card .tagp {
+  align-self: flex-start;
+}
+
+.sr {
+  position: absolute;
+  left: -9999px;
+}

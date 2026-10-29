@@ -1,0 +1,79 @@
+:where(body.home) .pill,
+:where(body.servicios) .pill,
+:where(body.notas) .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: transform 160ms var(--ease-out);
+}
+
+:where(body.home) .pill:active,
+:where(body.servicios) .pill:active,
+:where(body.notas) .pill:active {
+  transform: scale(.97);
+}
+
+:where(body.home) .pill i,
+:where(body.servicios) .pill i,
+:where(body.notas) .pill i {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--acc);
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition: transform 220ms var(--ease-out),background-color 220ms ease;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  :where(body.home) .pill:hover i,
+:where(body.servicios) .pill:hover i,
+:where(body.notas) .pill:hover i {
+    transform: rotate(45deg);
+    background: var(--acc);
+    color: var(--on-acc);
+  }
+}
+
+:where(body.article) .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+:where(body.home) .pill span,
+:where(body.servicios) .pill span,
+:where(body.notas) .pill span,
+:where(body.article) .pill span {
+  height: 54px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: var(--acc);
+  color: var(--on-acc);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+:where(body.article) .pill i {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--acc);
+  display: grid;
+  place-items: center;
+}
+
+:where(body.home) .pill i svg,
+:where(body.servicios) .pill i svg,
+:where(body.notas) .pill i svg,
+:where(body.article) .pill i svg {
+  width: 18px;
+  height: 18px;
+}
