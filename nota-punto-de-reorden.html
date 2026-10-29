@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Punto de reorden | Daclu</title>
+<meta name="description" content="Cuándo pedir mercancía sin quedarse sin stock: la fórmula, un ejemplo y cómo armarlo en Excel con el separador de Colombia.">
+<link rel="canonical" href="https://daclu.online/nota-punto-de-reorden.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Punto de reorden | Daclu">
+<meta property="og:description" content="Cuándo pedir mercancía sin quedarse sin stock: la fórmula, un ejemplo y cómo armarlo en Excel con el separador de Colombia.">
+<meta property="og:url" content="https://daclu.online/nota-punto-de-reorden.html">
+<meta property="og:image" content="https://daclu.online/og-image.png">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Punto de reorden | Daclu">
+<meta name="twitter:description" content="Cuándo pedir mercancía sin quedarse sin stock: la fórmula, un ejemplo y cómo armarlo en Excel con el separador de Colombia.">
+<meta name="twitter:image" content="https://daclu.online/og-image.png">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070809;--bg-2:#121417;--ink:#EDEDEA;--ink-2:#8E9196;--line:rgba(237,237,234,.12);--acc:#FFB000;--ease-out:cubic-bezier(0.23,1,0.32,1);--r:16px;--gutter:40px;--panel-inset:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Geist,system-ui,sans-serif;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.display{font-family:Anton,'Arial Narrow',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.92}
+nav{position:fixed;inset:0 0 auto 0;z-index:20;height:76px;display:flex;align-items:center;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+nav .wrap{width:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Anton,sans-serif;font-size:24px;letter-spacing:.02em;text-transform:uppercase}
+.brand svg{width:30px;height:30px}
+.links{display:flex;gap:36px;font-size:15px;color:var(--ink-2)}
+.links a{text-decoration:none}
+.links a[aria-current="page"]{color:var(--ink)}
+.links a[aria-current="page"]::after{content:"";display:block;height:2px;background:var(--acc);border-radius:2px;margin-top:4px}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.sheet{padding:120px 0 80px}
+.prose{max-width:68ch}
+.prose h1{font-size:clamp(40px,6vw,76px)}
+.by{color:var(--ink-2);font-size:14px;margin:18px 0 32px}
+.by time{color:inherit}
+.prose h2{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:40px 0 12px;padding-left:14px;border-left:4px solid var(--acc);line-height:1.2}
+.prose p{margin:0 0 16px;font-size:17px}
+.prose ul{margin:0 0 16px 1.2em}
+.prose li{margin:6px 0}
+pre{background:var(--bg-2);border-radius:12px;padding:16px 18px;overflow-x:auto;margin:0 0 20px;font:500 13.5px 'Geist Mono',ui-monospace,monospace;line-height:1.7}
+.table-wrap{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font:500 13px 'Geist Mono',ui-monospace,monospace}
+th,td{border-bottom:1px solid var(--line);text-align:left;padding:8px 10px;white-space:nowrap}
+th{color:var(--ink-2);font-weight:500}
+.pedir{color:var(--acc)}
+.pill{display:inline-flex;align-items:center;gap:6px;text-decoration:none;margin-top:8px}
+.pill span{height:54px;padding:0 30px;border-radius:999px;background:var(--acc);color:#14110A;display:flex;align-items:center;font-weight:500;font-size:16px;white-space:nowrap}
+.pill i{width:54px;height:54px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--acc);display:grid;place-items:center}
+.pill i svg{width:18px;height:18px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--ink-2);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .legal{margin-top:14px;font-size:12.5px}
+footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.fcon a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink)}
+.fcon a svg{width:14px;height:14px}
+@media (max-width:900px){:root{--gutter:16px}.links{display:none}.sheet{padding:104px 0 64px}.prose h1{font-size:clamp(36px,10vw,48px)}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="/" aria-label="Daclu inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="6" cy="27" r="2"/><circle cx="13" cy="5" r="2"/><circle cx="20" cy="7" r="2"/><circle cx="25" cy="12" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="20" cy="25" r="2"/><circle cx="13" cy="27" r="2"/></g><circle cx="15.5" cy="16" r="3.6" fill="#FFB000"/></svg>Daclu</a>
+  <div class="links"><a href="/">Inicio</a><a href="/#sectores">Sectores</a><a href="/servicios.html">Servicios</a><a href="/notas.html" aria-current="page">Notas</a></div>
+</div></nav>
+<main>
+<article class="sheet"><div class="wrap"><div class="prose">
+  <h1 class="display">Punto de reorden: cuándo pedir mercancía sin quedarse sin stock</h1>
+  <p class="by">Por Esteban Sequeda · <time datetime="2026-10-28">28 de octubre de 2026</time> · 6 min de lectura</p>
+
+  <h2>El problema</h2>
+  <p>En casi toda empresa que compra para volver a vender pasa una de dos cosas. Se queda sin la referencia que más sale, justo cuando el cliente la pide. O llena la bodega de lo que casi no rota, porque alguien pidió “por si acaso” y ese por si acaso lleva meses ocupando plata.</p>
+  <p>Las dos salen caras. El quiebre se ve en la venta que no se hizo y en el cliente que se fue a otro lado. El exceso se ve menos, pero está en la caja: mercancía pagada que no se mueve, espacio que no se puede usar y, en algunos casos, producto que se vence o se pasa de moda.</p>
+  <p>El pedido casi nunca se decide con una regla. Se decide cuando alguien se acuerda, cuando el proveedor llama, o cuando el estante se ve vacío. Eso funciona mientras el catálogo es corto y la misma persona lleva años mirándolo. En cuanto hay más referencias, más sedes o más de una persona comprando, la memoria deja de alcanzar.</p>
+  <p>El punto de reorden es esa regla, escrita. No predice el futuro. Dice, con los números que usted ya tiene, en qué momento hay que hacer el pedido para no llegar a cero mientras el proveedor despacha.</p>
+
+  <h2>La fórmula</h2>
+  <p>Punto de reorden = venta promedio diaria × (días que tarda el proveedor + días de colchón).</p>
+  <p>La venta promedio diaria es lo que sale de esa referencia en un día normal. Los días del proveedor son los que de verdad pasan entre el pedido y la llegada a su bodega, no los que dice el catálogo. El colchón son días extra de inventario para cubrir un retraso del proveedor o un pico de venta. No es adorno: sin colchón, cualquier día malo lo deja en cero.</p>
+  <p>Cuando el stock baja hasta ese número, se pide. No antes, porque estaría adelantando plata. No después, porque el tiempo del proveedor ya no le alcanza.</p>
+  <p>El colchón no es el mismo para todo. Lo que más vende, o lo que tarda más en llegar, merece más días. Lo que se mueve poco puede vivir con menos. Tratar a todo el catálogo igual es la forma más rápida de volver al problema del primer párrafo.</p>
+
+  <h2>Un ejemplo</h2>
+  <p>Tome una referencia que vende 20 unidades al día. El proveedor tarda 10 días en entregarla y usted quiere 4 días de colchón, por si el despacho se atrasa o la semana se pone buena.</p>
+  <p>20 × (10 + 4) = 280.</p>
+  <p>El punto de reorden es 280 unidades. Cuando el stock baje a 280, se hace el pedido. Si espera a tener 100, los 10 días del proveedor lo alcanzan en cero. Si pide cuando todavía tiene 600, está sentando plata que podía seguir en la caja.</p>
+  <p>El 280 no es la cantidad a pedir. Es la alarma. Cuánto pedir es otra cuenta: lo que espera vender hasta la siguiente compra, menos lo que ya tiene en camino. Esta nota se queda en la alarma, que es la que evita el quiebre.</p>
+
+  <h2>Cómo armarlo en Excel</h2>
+  <p>En Colombia Excel usa punto y coma para separar los argumentos. Si copia una fórmula de internet con comas, le va a marcar error. Estas son las de esta hoja.</p>
+  <p>Arme estas columnas, en este orden: Ref, Venta últimos 90 días, Días de entrega, Días de colchón, Stock actual, Venta diaria, Punto de reorden y ¿Pedir?</p>
+  <pre>Venta diaria        =B2/90
+Punto de reorden   =F2*(C2+D2)
+¿Pedir?            =SI(E2&lt;=G2;"Pedir";"OK")</pre>
+  <p>La venta de 90 días se divide entre 90 para tener un promedio diario. Si su negocio cierra los domingos, puede dividir entre los días que sí abre. Lo importante es usar el mismo criterio en todas las filas.</p>
+  <p>Un ejemplo con cinco referencias. Los números de venta diaria, punto de reorden y la decisión ya están calculados con esas fórmulas:</p>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Ref</th><th>Venta 90 días</th><th>Días entrega</th><th>Días colchón</th><th>Stock</th><th>Venta diaria</th><th>Punto de reorden</th><th>¿Pedir?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A-221</td><td>1.800</td><td>10</td><td>4</td><td>260</td><td>20</td><td>280</td><td class="pedir">Pedir</td></tr>
+      <tr><td>B-104</td><td>900</td><td>7</td><td>3</td><td>200</td><td>10</td><td>100</td><td>OK</td></tr>
+      <tr><td>C-018</td><td>2.700</td><td>12</td><td>5</td><td>400</td><td>30</td><td>510</td><td class="pedir">Pedir</td></tr>
+      <tr><td>D-330</td><td>450</td><td>15</td><td>2</td><td>90</td><td>5</td><td>85</td><td>OK</td></tr>
+      <tr><td>E-512</td><td>1.260</td><td>8</td><td>4</td><td>120</td><td>14</td><td>168</td><td class="pedir">Pedir</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>A-221 es el ejemplo de arriba: vende 20 al día, el proveedor tarda 10 y el colchón es 4, así que la alarma está en 280. Hoy hay 260, por eso la fórmula dice Pedir. B-104 todavía está por encima de su alarma. C-018 y E-512 ya la pasaron. D-330 se mueve poco y, con 90 unidades, todavía alcanza.</p>
+  <p>Filtre la columna ¿Pedir? y quédese con las que dicen Pedir. Esa es la lista del día. No tiene que recorrer el catálogo a ojo.</p>
+  <p>Actualice el stock y la venta de 90 días con la frecuencia con la que compra. Si pide cada semana y la hoja tiene dos meses, la alarma ya no sirve. Una exportación del software contable o del ERP, pegada encima de estas columnas, basta para refrescarla.</p>
+
+  <h2>Errores comunes</h2>
+  <p>Promediar todo el año cuando el negocio tiene temporadas. Una referencia de diciembre no se comporta como una de marzo. Si mete los doce meses en la misma celda, el punto de reorden le queda bajo en la temporada alta y alto en la baja. Use los últimos 90 días, o la misma temporada del año pasado, no el promedio anual.</p>
+  <p>No actualizar los días reales de entrega. El proveedor decía 8 días y hace meses entrega en 15. Si la fórmula sigue con 8, va a pedir tarde y se va a quedar sin stock creyendo que la cuenta está bien. Anote la fecha del pedido y la fecha en que llegó. El promedio de esas diferencias es el número que va en la columna, no el del correo de ventas.</p>
+  <p>Darle el mismo colchón a todo. Cuatro días pueden sobrar en una referencia que vende dos unidades por semana y quedarse cortos en la que se agota un viernes. Lo que más vende merece más colchón, porque un día de quiebre ahí duele más. Lo que no rota no necesita el mismo seguro.</p>
+  <p>Olvidar lo que ya está pedido. Si hay un despacho en camino, ese stock todavía no está en la bodega pero ya no hay que volver a pedirlo. Réstele las unidades en tránsito antes de decidir, o va a duplicar el pedido.</p>
+
+  <h2>Si son cientos de referencias</h2>
+  <p>Con veinte referencias, esta hoja la revisa usted un lunes y listo. Con cientos, copiar, pegar y filtrar todas las semanas se vuelve otro trabajo. Ahí conviene que la cuenta corra sola: la venta, el stock y los días de entrega salen de su sistema, y la lista de “Pedir” le llega sin armarla a mano.</p>
+  <p>Si quiere ver cómo quedaría con sus propios números, agende un diagnóstico. Son 45 minutos, sin costo, y sale con el punto de reorden aplicado a su catálogo, no a un ejemplo.</p>
+  <a class="pill" href="https://wa.me/573157312785?text=Hola%2C%20vengo%20de%20la%20web%20de%20Daclu%20y%20quiero%20agendar%20un%20diagn%C3%B3stico." target="_blank" rel="noopener"><span>Agendar diagnóstico</span><i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></i></a>
+</div></div></article>
+</main>
+<footer><div class="wrap">
+  <span>Daclu. Datos que se convierten en decisiones.</span>
+  <span class="fcon"><a href="mailto:hola@daclu.online">hola@daclu.online</a>  /  <a href="https://wa.me/573157312785?text=Hola%2C%20vengo%20de%20la%20web%20de%20Daclu%20y%20quiero%20agendar%20un%20diagn%C3%B3stico." target="_blank" rel="noopener">WhatsApp</a> · <a href="https://wa.me/573157312785?text=Hola%2C%20vengo%20de%20la%20web%20de%20Daclu%20y%20quiero%20agendar%20un%20diagn%C3%B3stico." target="_blank" rel="noopener">+57 315 731 2785</a>  /  <a href="https://www.linkedin.com/company/146740480/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.6 8.65 22 11.2 22 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21h-4z"/></svg>LinkedIn</a></span>
+</div>
+<div class="wrap legal"><span>DACLU S.A.S. · NIT 902.117.086-9 · Colombia</span><a href="/politica-de-datos.html">Política de tratamiento de datos</a></div>
+</footer>
+</body>
+</html>
