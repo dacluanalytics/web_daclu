@@ -23,10 +23,35 @@
 </head>
 <body class="article">
 <nav id="nav" class="solid"><div class="wrap">
-  <a class="brand" href="/" aria-label="Daclu inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="6" cy="27" r="2"/><circle cx="13" cy="5" r="2"/><circle cx="20" cy="7" r="2"/><circle cx="25" cy="12" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="20" cy="25" r="2"/><circle cx="13" cy="27" r="2"/></g><circle cx="15.5" cy="16" r="3.6" fill="#FFB000"/></svg>Daclu</a>
-  <button type="button" class="menu" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
-  <div class="links" id="nav-links"><a href="/">Inicio</a><a href="/#sectores">Sectores</a><a href="/servicios.html">Servicios</a><a href="/notas.html" aria-current="page">Notas</a></div>
+  <a class="brand" href="/index.html" aria-label="Daclu inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="6" cy="27" r="2"/><circle cx="13" cy="5" r="2"/><circle cx="20" cy="7" r="2"/><circle cx="25" cy="12" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="20" cy="25" r="2"/><circle cx="13" cy="27" r="2"/></g><circle cx="15.5" cy="16" r="3.6" fill="#FFB000"/></svg>Daclu</a>
+  <div class="links" id="nav-links"><a href="/index.html" data-nav="inicio">Inicio</a><a href="/index.html#sectores" data-nav="sectores">Sectores</a><a href="/servicios.html" data-nav="servicios">Servicios</a><a href="/notas.html" data-nav="notas" aria-current="page">Notas</a></div>
+  <button type="button" class="menu" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </div></nav>
+<div class="nav-scrim" hidden></div>
+<div class="nav-drop" id="nav-menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+  <div class="nav-cols">
+    <div class="nav-col">
+      <p class="nav-label">Daclu</p>
+      <a href="/index.html" data-nav="inicio">Inicio</a>
+      <a href="/index.html#sectores" data-nav="sectores">Sectores</a>
+      <a href="/servicios.html" data-nav="servicios">Servicios</a>
+      <a href="/notas.html" data-nav="notas" aria-current="page">Notas</a>
+    </div>
+    <div class="nav-col">
+      <p class="nav-label">Lo que hacemos</p>
+      <a href="/index.html#sectores">Importadores</a>
+      <a href="/index.html#sectores">Clínicas e IPS</a>
+      <a href="/index.html#sectores">Comercio y retail</a>
+      <a href="/servicios.html">Páginas web</a>
+      <a href="/servicios.html">Automatización</a>
+      <a href="/servicios.html">Soporte de computadores</a>
+    </div>
+  </div>
+  <div class="nav-foot">
+    <a class="nav-pill" href="https://wa.me/573155522213" target="_blank" rel="noopener"><span>Agendar diagnóstico</span><i aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></i></a>
+    <p class="nav-meta"><a href="mailto:dacluanalytics@gmail.com">dacluanalytics@gmail.com</a><a href="https://www.linkedin.com/company/146740480/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+</div>
 <main>
 <article class="article-pad"><div class="wrap"><div class="prose">
   <h1 class="display">Punto de reorden: cuándo pedir mercancía sin quedarse sin stock</h1>
@@ -94,6 +119,6 @@ Punto de reorden   =F2*(C2+D2)
 </div>
 <div class="wrap legal"><span>DACLU S.A.S. · NIT 902.117.086-9 · Colombia</span><a href="/politica-de-datos.html">Política de tratamiento de datos</a></div>
 </footer>
-<script src="/scripts/nav.js"></script>
+<script src="/scripts/header.js"></script>
 </body>
 </html>

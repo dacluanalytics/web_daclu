@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Daclu | Analítica de datos para empresas en Colombia</title>
-<meta name="description" content="Convertimos sus ventas, inventario y cartera en decisiones claras. Tableros, predicción y automatización. Diagnóstico de 45 minutos sin costo.">
+<title>Cómo mejorar la rentabilidad de su empresa | Daclu Colombia</title>
+<meta name="description" content="Sepa dónde se le va el dinero: margen real por producto y cliente, inventario quieto y cartera atrasada. Tableros para pymes en Colombia. Diagnóstico de 45 min gratis.">
 <link rel="canonical" href="https://daclu.online/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Daclu | Analítica de datos para empresas en Colombia">
-<meta property="og:description" content="Convertimos sus ventas, inventario y cartera en decisiones claras. Tableros, predicción y automatización. Diagnóstico de 45 minutos sin costo.">
+<meta property="og:title" content="Cómo mejorar la rentabilidad de su empresa | Daclu Colombia">
+<meta property="og:description" content="Sepa dónde se le va el dinero: margen real por producto y cliente, inventario quieto y cartera atrasada. Tableros para pymes en Colombia. Diagnóstico de 45 min gratis.">
 <meta property="og:url" content="https://daclu.online/">
 <meta property="og:image" content="https://daclu.online/og-image.png">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Daclu | Analítica de datos para empresas en Colombia">
-<meta name="twitter:description" content="Convertimos sus ventas, inventario y cartera en decisiones claras. Tableros, predicción y automatización. Diagnóstico de 45 minutos sin costo.">
+<meta name="twitter:title" content="Cómo mejorar la rentabilidad de su empresa | Daclu Colombia">
+<meta name="twitter:description" content="Sepa dónde se le va el dinero: margen real por producto y cliente, inventario quieto y cartera atrasada. Tableros para pymes en Colombia. Diagnóstico de 45 min gratis.">
 <meta name="twitter:image" content="https://daclu.online/og-image.png">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,13 +24,38 @@
 <body class="home">
 
 <nav id="nav"><div class="wrap">
-  <a class="brand" href="/" aria-label="Daclu inicio">
+  <a class="brand" href="/index.html" aria-label="Daclu inicio">
     <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="6" cy="27" r="2"/><circle cx="13" cy="5" r="2"/><circle cx="20" cy="7" r="2"/><circle cx="25" cy="12" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="20" cy="25" r="2"/><circle cx="13" cy="27" r="2"/></g><circle cx="15.5" cy="16" r="3.6" fill="#FFB000"/></svg>
     Daclu
   </a>
-  <button type="button" class="menu" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
-  <div class="links" id="nav-links"><a href="/" aria-current="page">Inicio</a><a href="/#sectores">Sectores</a><a href="/servicios.html">Servicios</a><a href="/notas.html">Notas</a></div>
+  <div class="links" id="nav-links"><a href="/index.html" data-nav="inicio" aria-current="page">Inicio</a><a href="/index.html#sectores" data-nav="sectores">Sectores</a><a href="/servicios.html" data-nav="servicios">Servicios</a><a href="/notas.html" data-nav="notas">Notas</a></div>
+  <button type="button" class="menu" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </div></nav>
+<div class="nav-scrim" hidden></div>
+<div class="nav-drop" id="nav-menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+  <div class="nav-cols">
+    <div class="nav-col">
+      <p class="nav-label">Daclu</p>
+      <a href="/index.html" data-nav="inicio" aria-current="page">Inicio</a>
+      <a href="/index.html#sectores" data-nav="sectores">Sectores</a>
+      <a href="/servicios.html" data-nav="servicios">Servicios</a>
+      <a href="/notas.html" data-nav="notas">Notas</a>
+    </div>
+    <div class="nav-col">
+      <p class="nav-label">Lo que hacemos</p>
+      <a href="/index.html#sectores">Importadores</a>
+      <a href="/index.html#sectores">Clínicas e IPS</a>
+      <a href="/index.html#sectores">Comercio y retail</a>
+      <a href="/servicios.html">Páginas web</a>
+      <a href="/servicios.html">Automatización</a>
+      <a href="/servicios.html">Soporte de computadores</a>
+    </div>
+  </div>
+  <div class="nav-foot">
+    <a class="nav-pill" href="https://wa.me/573155522213" target="_blank" rel="noopener"><span>Agendar diagnóstico</span><i aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></i></a>
+    <p class="nav-meta"><a href="mailto:dacluanalytics@gmail.com">dacluanalytics@gmail.com</a><a href="https://www.linkedin.com/company/146740480/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+</div>
 
 <div id="story">
   <div class="pin">
@@ -676,6 +701,6 @@ requestAnimationFrame(frame);
  setInterval(()=>{if(reduce||!inView||performance.now()<hold)return;tf++;setF(tf%4);if(tf%2===0){ts++;setS(ts%3)}},2600);
 })();
 </script>
-<script src="/scripts/nav.js"></script>
+<script src="/scripts/header.js"></script>
 </body>
 </html>
